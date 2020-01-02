@@ -1,0 +1,28 @@
+name: 打包编译 Web 并发布网页到 GitHub Pages
+on:
+  push:
+    branches:
+      - pages
+
+jobs:
+  build-and-deploy:
+    name: 拉取代码构建部署
+    runs-on: ubuntu-latest
+    steps:
+      - name: 打印系统版本状态
+        run: uname -a && node -v && echo 打印系统版本状态
+
+      - name: 拉取代码 Checkout
+        users: actions/checkout@v2
+#        with:
+#          ref: 'pages'
+      -
+      - name: Build and Deploy
+          uses: JamesIves/github-pages-deploy-action@master
+          env:
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: build
+            BUILD_SCRIPT: npm install && npm run build
+
+

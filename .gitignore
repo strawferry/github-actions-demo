@@ -63,3 +63,6 @@ Temporary Items
 *.iml
 out
 gen
+
+.vscode/
+node_modules/
