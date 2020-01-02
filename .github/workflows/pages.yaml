@@ -16,7 +16,7 @@ jobs:
         users: actions/checkout@v2
 #        with:
 #          ref: 'pages'
-      -
+
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@master
         env:
