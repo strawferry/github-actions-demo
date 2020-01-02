@@ -13,12 +13,12 @@ jobs:
         run: uname -a && node -v && echo 打印系统版本状态
 
       - name: 拉取代码 Checkout
-        users: actions/checkout@v2
+        uses: actions/checkout@v2
 #        with:
 #          ref: 'pages'
 
       - name: Build and Deploy
-        users: JamesIves/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
