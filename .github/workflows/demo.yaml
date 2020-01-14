@@ -12,10 +12,19 @@ jobs:
       - name: always
         if: always()
         run: echo "echo always"
+      - name: success
+        if: success()
+        run: echo "echo success"
+      - name: failure
+        if: failure()
+        run: echo "echo failure"
+      - name: cancelled
+        if: cancelled()
+        run: echo "echo cancelled"
       - name: echo start
         run: echo "echo start"
       - name: whoami
-        run: whoami
+        run: whoami && sleep 10s
       - name: tree
         run: tree
       - name: echo end
