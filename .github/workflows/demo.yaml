@@ -9,14 +9,12 @@ jobs:
     name: job 名称
     runs-on: macos-latest
     steps:
-      - name: 步骤名称
-        env:
-          MY_VAR: 设置的变量
-          VAR_1: 变量 1
-        run: |
-          echo "echo start"
-          whoami
-          tree
-          whoami
-          echo "echo end"
+      - name: echo start
+        run: echo "echo start"
+      - name: whoami
+        run: whoami
+      - name: tree
+        run: tree
+      - name: echo end
+        run: echo "echo end"
 
