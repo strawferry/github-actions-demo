@@ -2,15 +2,21 @@ name: workflows 的名称
 on:
   push:
     branches:
-      - master
+      - test
 
 jobs:
   my-job:
     name: job 名称
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: 步骤名称
         env:
           MY_VAR: 设置的变量
           VAR_1: 变量 1
-        run: echo $MY_VAR $VAR_1.
+        run: |
+          echo "echo start"
+          whoami
+          tree
+          whoami
+          echo "echo end"
+
