@@ -10,8 +10,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: always
-          if: always()
-          run: echo "echo always"
+        if: always()
+        run: echo "echo always"
       - name: echo start
         run: echo "echo start"
       - name: whoami
