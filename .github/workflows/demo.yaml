@@ -9,6 +9,14 @@ jobs:
     name: job 名称
     runs-on: macos-latest
     steps:
+      - name: echo start
+        run: echo "echo start"
+      - name: whoami
+        run: whoami && sleep 10s
+      - name: tree
+        run: tree
+      - name: echo end
+        run: echo "echo end"
       - name: always
         if: always()
         run: echo "echo always"
@@ -21,12 +29,4 @@ jobs:
       - name: cancelled
         if: cancelled()
         run: echo "echo cancelled"
-      - name: echo start
-        run: echo "echo start"
-      - name: whoami
-        run: whoami && sleep 10s
-      - name: tree
-        run: tree
-      - name: echo end
-        run: echo "echo end"
 
